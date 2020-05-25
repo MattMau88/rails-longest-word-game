@@ -1,0 +1,23 @@
+<h1>Logest word game</h1>
+<p>Rules of the game:</p>
+<ol>
+  <li>You are given a random set (grid) of letters.</li>
+  <li>You have to enter the longest english word you can find using only letters in the grid.</li>
+  <li>You have to enter the longest english word you can find using only letters in the grid.</li>
+  <li>After typing your answer, you get your score combined with the time you took, and eventually an error message if you failed.</li>
+</ol>
+<p>Let's play! Here's your set of letters:</p>
+<%= @letters %>
+
+<p>What's the longest word you can find?</p>
+<form action="/score" method="post" >
+  <input ype="text" name="word" placeholder="Enter word here...">
+  <input type="submit" value="Submit word">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+
+</form>
+
+
+
+
